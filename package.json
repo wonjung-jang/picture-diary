@@ -11,7 +11,9 @@
     "electron": "electron .",
     "electron-dev": "concurrently \"cross-env BROWSER=none npm run dev\" \"wait-on tcp:3000 && npm run electron\"",
     "electron-build": "next build && tsc -p electron/tsconfig.json && electron-builder",
-    "electron-start": "tsc -p electron/tsconfig.json && electron ."
+    "electron-start": "tsc -p electron/tsconfig.json && electron .",
+    "prepare": "husky install",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "next": "15.3.1",
@@ -31,9 +33,22 @@
     "electron-is-dev": "^3.0.1",
     "eslint": "^9",
     "eslint-config-next": "15.3.1",
+    "eslint-config-prettier": "^10.1.2",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.1",
     "postcss": "^8.4.35",
+    "prettier": "^3.5.3",
     "tailwindcss": "^3.4.1",
     "typescript": "^5",
     "wait-on": "^8.0.3"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
+    ]
   }
 }
