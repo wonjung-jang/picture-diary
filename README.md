@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Picture Diary
 
-## Getting Started
+Next.js + Electron + TypeScript + Tailwind CSS를 사용한 데스크톱 사진 일기장 애플리케이션
 
-First, run the development server:
+## 기술 스택
+
+- Next.js 15.3.1
+- Electron 36.0.0
+- TypeScript 5
+- Tailwind CSS 3.4.1
+- React 19
+
+## 개발 환경 설정
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# 의존성 설치
+npm install
+
+# 개발 모드 실행
+npm run electron-dev
+
+# 프로덕션 빌드
+npm run electron-build
+
+# 빌드된 앱 실행
+npm run electron-start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 주요 기능
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Next.js와 Electron 통합
+- TypeScript 지원
+- Tailwind CSS를 통한 모던 UI
+- Hot Module Replacement (HMR) 지원
+- 크로스 플랫폼 지원 (Windows, macOS, Linux)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 프로젝트 구조
 
-## Learn More
+```
+picture-diary/
+├── src/                    # Next.js 소스 코드
+│   ├── app/               # App Router
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+├── electron/              # Electron 관련 코드
+│   ├── main.ts
+│   └── tsconfig.json
+├── public/               # 정적 파일
+└── dist/                 # 빌드 결과물
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 라이선스
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
